@@ -31,14 +31,24 @@ class MainActivity : AppCompatActivity() {
 //            insets
 //        }
         //val button = findViewById<Button>(R.id.button)
-        binding.button.setOnClickListener {
-            val txt = binding.textInputLayout.editText?.text ?: "ggggg"
-            binding.textView.text = txt
+        binding.buttonPlus.setOnClickListener {
+            binding.value1.text.toString().toDoubleOrNull()?.let{v1->
+                binding.value2.text.toString().toDoubleOrNull()?.let{v2->
+                    binding.textViewResult.text = "${v1+v2}"
+                }
+            }
+            //val txt = binding.textInputLayout.editText?.text ?: "ggggg"
+            //binding.textView.
+            //text = "133txt"
 
 
 
             //Toast.makeText(this, "ПРивет!", Toast.LENGTH_LONG).show()
         }
+
+//        binding.imageView1.setOnClickListener {
+//            Toast.makeText(this, "Это сердце!", Toast.LENGTH_LONG).show()
+//        }
     }
 //    fun obButton123aClick(
 //        view : View
