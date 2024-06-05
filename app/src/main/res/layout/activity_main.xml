@@ -5,7 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white"
+
+    >
 
 
     <LinearLayout
@@ -18,18 +21,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
+<!--        <EditText-->
+<!--            android:id="@+id/value1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:inputType="numberSigned"-->
+<!--            android:text="" />-->
+<!--        <EditText-->
+<!--            android:id="@+id/value2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            android:text="" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/value1"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:inputType="numberSigned"
-            android:text="" />
-        <EditText
+            android:layout_height="60dp"
+            style="@style/InputTextStyle"
+            android:hint="@string/operand1">
+<!--            app:boxStrokeColor="@color/text_input_layout_color"-->
+<!--            android:textColorHint="@color/primary"-->
+<!--            app:hintTextColor="@color/primary"-->
+<!--            app:cursorColor="@color/primary"-->
+<!--            app:boxStrokeWidth="3dp"-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+
+                style="@style/InputTextEditStyle"
+                />
+<!--            android:textColor="@color/primary"-->
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/value2"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:inputType="numberDecimal"
-            android:text="" />
+            android:layout_height="60dp"
+            style="@style/InputTextStyle"
+            android:hint="@string/operand2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                style="@style/InputTextEditStyle"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <LinearLayout
@@ -54,21 +94,34 @@
                 android:layout_weight="1" />
 
             <Button
-                style="?attr/materialIconButtonFilledStyle"
+                style="@style/MyButtonStyle"
                 android:id="@+id/buttonPlus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/baseline_add_24"
-                app:cornerRadius="10dp"
                 />
 <!--            android:text="Button"-->
             <Button
-                style="?attr/materialIconButtonFilledStyle"
+                style="@style/MyButtonStyle"
                 android:id="@+id/buttonMinus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/baseline_add_24"
-                app:cornerRadius="10dp"/>
+                />
+            <Button
+                style="@style/MyButtonStyle"
+                android:id="@+id/buttonMultiply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/baseline_add_24"
+                />
+            <Button
+                style="@style/MyButtonStyle"
+                android:id="@+id/buttonDivision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/baseline_add_24"
+                />
 
             <Space
                 android:layout_width="wrap_content"
@@ -78,17 +131,35 @@
         </LinearLayout>
 
 
-
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="TextView"
+            android:layout_height="60dp"
+            style="@style/InputTextStyle"
+            android:hint="@string/result"
+            android:enabled="false"
+            >
 
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo"
+        android:layout_margin="16dp"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

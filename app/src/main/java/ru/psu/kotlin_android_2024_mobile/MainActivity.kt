@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
 //        }
         //val button = findViewById<Button>(R.id.button)
         binding.buttonPlus.setOnClickListener {
-            binding.value1.text.toString().toDoubleOrNull()?.let{v1->
-                binding.value2.text.toString().toDoubleOrNull()?.let{v2->
-                    binding.textViewResult.text = "${v1+v2}"
+            binding.value1.editText?.text.toString().toDoubleOrNull()?.let{v1->
+                binding.value2.editText?.text.toString().toDoubleOrNull()?.let{v2->
+                    binding.textViewResult.editText?.setText("${v1+v2}")
                 }
             }
             //val txt = binding.textInputLayout.editText?.text ?: "ggggg"
