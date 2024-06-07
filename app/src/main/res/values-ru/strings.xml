@@ -4,4 +4,6 @@
     <string name="operand2">Операнд 2</string>
     <string name="operand1">Операнд 1</string>
     <string name="result">Результат</string>
+    <string name="title_activity_compose">Активность Compose</string>
+    <string name="Add">Сложить</string>
 </resources>

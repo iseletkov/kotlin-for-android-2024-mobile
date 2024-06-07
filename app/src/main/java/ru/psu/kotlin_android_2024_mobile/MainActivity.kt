@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            //Toast.makeText(this, "ПРивет!", Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, "ПРивет!", Toast.LENGTH_LONG).show()
         }
 
 //        binding.imageView1.setOnClickListener {

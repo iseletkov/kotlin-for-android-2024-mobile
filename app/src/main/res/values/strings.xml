@@ -3,4 +3,6 @@
     <string name="operand2">Operand 2</string>
     <string name="operand1">Operand 1</string>
     <string name="result">result</string>
+    <string name="title_activity_compose">CActivityCompose</string>
+    <string name="Add">Add</string>
 </resources>

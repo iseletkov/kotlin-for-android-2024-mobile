@@ -37,7 +37,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/value1"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/RowHeight"
             style="@style/InputTextStyle"
             android:hint="@string/operand1">
 <!--            app:boxStrokeColor="@color/text_input_layout_color"-->
@@ -58,7 +58,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/value2"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/RowHeight"
             style="@style/InputTextStyle"
             android:hint="@string/operand2">
 
@@ -134,7 +134,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/RowHeight"
             style="@style/InputTextStyle"
             android:hint="@string/result"
             android:enabled="false"
