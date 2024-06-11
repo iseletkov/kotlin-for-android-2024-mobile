@@ -1,23 +1,17 @@
-package ru.psu.kotlin_android_2024_mobile
+package ru.psu.kotlin_android_2024_mobile.ui.calculator_view
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import ru.psu.kotlin_android_2024_mobile.databinding.ActivityMainBinding
+import ru.psu.kotlin_android_2024_mobile.databinding.ActivityCalculatorBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class CActivityCalculatorView : AppCompatActivity() {
+    private lateinit var binding: ActivityCalculatorBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityCalculatorBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -54,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 //        view : View
 //    )
 //    {
-//        Toast.makeText(this, "ПРивет!", Toast.LENGTH_LONG).show()
+//        Toast.makeText(this, "Привет!", Toast.LENGTH_LONG).show()
 //    }
 
 
