@@ -4,8 +4,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 
-class CViewModelCalculatorCompose : ViewModel(){
+class CViewModelCalculatorCompose(testParam: String?) : ViewModel(){
     var op1 by mutableStateOf("")
         private set
 
@@ -31,6 +32,15 @@ class CViewModelCalculatorCompose : ViewModel(){
         result = (op1.toDouble()-op2.toDouble()).toString()
     }
 
-
+    companion object {
+        fun provideFactory(
+            testParam: String? = null
+        ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
+            @Suppress("UNCHECKED_CAST")
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return CViewModelCalculatorCompose(testParam) as T
+            }
+        }
+    }
 
 }
