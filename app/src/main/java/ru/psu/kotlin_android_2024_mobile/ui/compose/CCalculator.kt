@@ -1,4 +1,4 @@
-package ru.psu.kotlin_android_2024_mobile.ui.calculator_compose
+package ru.psu.kotlin_android_2024_mobile.ui.compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -25,20 +25,14 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import ru.psu.kotlin_android_2024_mobile.R
 
 @Composable
 fun CalculatorBody(
     viewModel : CViewModelCalculatorCompose,
-    modifier: Modifier = Modifier) {
-    //    var op1 by rememberSaveable { mutableStateOf("") }
-//    var op2 by rememberSaveable { mutableStateOf("") }
-//    var result by rememberSaveable { mutableStateOf("") }
+    modifier: Modifier = Modifier
+) {
 
-//    val viewModel: CViewModelCalculatorCompose = viewModel()
-
-    //val context = LocalContext.current
     val rowHeight = dimensionResource(R.dimen.RowHeight)
 
     val buttonColors = ButtonDefaults.buttonColors(

@@ -1,4 +1,4 @@
-package ru.psu.kotlin_android_2024_mobile.ui.calculator_compose
+package ru.psu.kotlin_android_2024_mobile.ui.compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import ru.psu.kotlin_android_2024_mobile.R
 
 @Composable
-fun CTimer()
+fun CConverter()
 {
     Box {
         Image(
@@ -25,7 +25,7 @@ fun CTimer()
         )
 
         Text(
-            text = "Это таймер"
+            text = "Это конвертер"
         )
     }
 }

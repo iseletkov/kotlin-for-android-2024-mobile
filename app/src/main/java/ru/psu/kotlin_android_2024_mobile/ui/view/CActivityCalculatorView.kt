@@ -1,4 +1,4 @@
-package ru.psu.kotlin_android_2024_mobile.ui.calculator_view
+package ru.psu.kotlin_android_2024_mobile.ui.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

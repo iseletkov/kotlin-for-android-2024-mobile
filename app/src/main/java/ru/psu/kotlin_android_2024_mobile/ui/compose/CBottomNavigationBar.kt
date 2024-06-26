@@ -1,4 +1,4 @@
-package ru.psu.kotlin_android_2024_mobile.ui.calculator_compose
+package ru.psu.kotlin_android_2024_mobile.ui.compose
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -13,15 +13,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 
 @Composable
-fun CBottomNavigationBar(navController: NavHostController)
+fun CBottomNavigationBar(
+    navController: NavHostController,
+    pages : List<CPageInfo>
+)
 {
-    val items = listOf(
-        "calculator",
-        "converter",
-        "timer"
-    )
-
-
     // observe the backstack
     val navBackStackEntry by navController.currentBackStackEntryAsState()
 
@@ -30,17 +26,17 @@ fun CBottomNavigationBar(navController: NavHostController)
     val currentRoute = navBackStackEntry?.destination?.route
 
     BottomAppBar(
-        containerColor = MaterialTheme.colorScheme.primaryContainer,
-        contentColor = MaterialTheme.colorScheme.primary,
+        containerColor = MaterialTheme.colorScheme.primary,
+        contentColor = Color.White,
         actions = {
-            items.forEach { item->
+            pages.forEach { pageInfo->
                 IconButton(onClick = {
-                    navController.navigate(item)
+                    navController.navigate(pageInfo.path)
                 }) {
                     Icon(
-                        Icons.Filled.Check,
-                        contentDescription = "Localized description",
-                        tint = if (item==currentRoute) Color.Yellow else Color.Green
+                        pageInfo.icon,
+                        contentDescription = pageInfo.name,
+                        tint = if (pageInfo.path==currentRoute) Color.LightGray else Color.White
                     )
                 }
             }

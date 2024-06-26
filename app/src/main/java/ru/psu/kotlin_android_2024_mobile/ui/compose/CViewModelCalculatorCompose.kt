@@ -1,4 +1,4 @@
-package ru.psu.kotlin_android_2024_mobile.ui.calculator_compose
+package ru.psu.kotlin_android_2024_mobile.ui.compose
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class CViewModelCalculatorCompose(testParam: String?) : ViewModel(){
+class CViewModelCalculatorCompose : ViewModel(){
     var op1 by mutableStateOf("")
         private set
 
@@ -30,17 +30,6 @@ class CViewModelCalculatorCompose(testParam: String?) : ViewModel(){
 
     fun onButtonMinusClick() {
         result = (op1.toDouble()-op2.toDouble()).toString()
-    }
-
-    companion object {
-        fun provideFactory(
-            testParam: String? = null
-        ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-            @Suppress("UNCHECKED_CAST")
-            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return CViewModelCalculatorCompose(testParam) as T
-            }
-        }
     }
 
 }
