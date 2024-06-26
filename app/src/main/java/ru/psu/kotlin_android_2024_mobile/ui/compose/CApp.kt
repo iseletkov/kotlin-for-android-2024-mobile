@@ -3,7 +3,6 @@ package ru.psu.kotlin_android_2024_mobile.ui.compose
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -23,10 +22,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import ru.psu.kotlin_android_2024_mobile.R
 import ru.psu.kotlin_android_2024_mobile.ui.theme.CAppTheme
-
-
-
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

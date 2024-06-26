@@ -1,9 +1,5 @@
 package ru.psu.kotlin_android_2024_mobile.ui.compose
 
-import android.R.attr
-import android.app.Activity
-import android.content.Context
-import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Build
@@ -13,25 +9,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.core.os.BundleCompat
-import androidx.lifecycle.viewmodel.compose.viewModel
 
-
-//fun Context.getActivity(): CActivityCompose? {
-//    var currentContext = this
-//    while (currentContext is ContextWrapper) {
-//        if (currentContext is CActivityCompose) {
-//            return currentContext
-//        }
-//        currentContext = currentContext.baseContext
-//    }
-//    return null
-//}
 
 class CActivityCompose : ComponentActivity() {
     private lateinit var resultLauncher : ActivityResultLauncher<Intent>
-    //private val viewModel : CViewModelTest by viewModels()
 
     private var onBitmapReadyHandler : (Bitmap) -> Unit = {}
 
@@ -63,7 +45,6 @@ class CActivityCompose : ComponentActivity() {
 
                     bitmap?.let {
                         onBitmapReadyHandler(it)
-                        //viewModel.setBitmap(bitmap)
                     }
                 }
             }
