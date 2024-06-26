@@ -71,7 +71,7 @@ fun CPhoto()
 
             }
             newBitmap?.let {
-                //viewModel.setBitmap(newBitmap)
+//                viewModel.setBitmap(newBitmap)
                 bitmap = it.asImageBitmap()
             }
         }
@@ -83,7 +83,7 @@ fun CPhoto()
     ) {
         Image(
             bitmap = bitmap?:defaultBitmap,
-            //bitmap = viewModel.bitmap?:defaultBitmap,
+//            bitmap = viewModel.bitmap?:defaultBitmap,
             contentDescription = stringResource(id = R.string.app_name),
             contentScale = ContentScale.Crop,
             modifier = Modifier
