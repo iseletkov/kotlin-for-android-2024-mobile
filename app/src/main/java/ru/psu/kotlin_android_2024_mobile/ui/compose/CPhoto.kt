@@ -44,9 +44,7 @@ import ru.psu.kotlin_android_2024_mobile.R
 
 
 @Composable
-fun CPhoto(
-    onTakePhotoClick : ((Bitmap)->Unit) -> Unit
-)
+fun CPhoto()
 {
     val buttonColors = ButtonDefaults.buttonColors(
         contentColor = Color.White,
@@ -140,5 +138,5 @@ fun CPhoto(
 @Composable
 fun CPreviewPhoto()
 {
-    CPhoto {}
+    CPhoto()
 }
