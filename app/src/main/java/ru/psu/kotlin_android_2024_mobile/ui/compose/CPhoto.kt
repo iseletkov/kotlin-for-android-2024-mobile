@@ -9,15 +9,12 @@ import android.provider.MediaStore
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -41,8 +38,6 @@ import androidx.core.os.BundleCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import ru.psu.kotlin_android_2024_mobile.R
 
-
-
 @Composable
 fun CPhoto()
 {
@@ -57,30 +52,30 @@ fun CPhoto()
     //https://developer.android.com/develop/ui/compose/libraries
     var bitmap by remember { mutableStateOf<ImageBitmap?>(null) }
 //    val viewModel : CViewModelPhoto = viewModel()
-//    val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//    val launcher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-//        if (result.resultCode == Activity.RESULT_OK) {
-//            // There are no request codes
-//            val data: Intent? = result.data
-//            val extras = data?.extras
-//
-//            val newBitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-//                data?.getParcelableExtra("data", Bitmap::class.java)
-//            } else {
-//                extras?.let {
-//                    BundleCompat.getParcelable(
-//                        it, "data",
-//                        Bitmap::class.java
-//                    )
-//                }
-//
-//            }
-//            newBitmap?.let {
-//                viewModel.setBitmap(newBitmap)
-//                //bitmap = newBitmap
-//            }
-//        }
-//    }
+    val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+    val launcher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            // There are no request codes
+            val data: Intent? = result.data
+            val extras = data?.extras
+
+            val newBitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                data?.getParcelableExtra("data", Bitmap::class.java)
+            } else {
+                extras?.let {
+                    BundleCompat.getParcelable(
+                        it, "data",
+                        Bitmap::class.java
+                    )
+                }
+
+            }
+            newBitmap?.let {
+                //viewModel.setBitmap(newBitmap)
+                bitmap = it.asImageBitmap()
+            }
+        }
+    }
 
     Column(
         modifier = Modifier
@@ -105,10 +100,7 @@ fun CPhoto()
             colors = buttonColors,
             shape = buttonShape,
             onClick = {
-//                onTakePhotoClick{newBitmap ->
-//                    updateBitmap(newBitmap.asImageBitmap())
-//                }
-//                launcher.launch(intent)
+                launcher.launch(intent)
             }) {
             Text("Take photo")
         }

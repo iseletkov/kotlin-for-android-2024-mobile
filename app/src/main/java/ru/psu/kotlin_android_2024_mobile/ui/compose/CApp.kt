@@ -31,7 +31,6 @@ import ru.psu.kotlin_android_2024_mobile.ui.theme.CAppTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CScaffold(
-    onTakePhotoClick : ((Bitmap)->Unit) -> Unit,
     modifier: Modifier = Modifier
 )
 {
@@ -56,7 +55,7 @@ fun CScaffold(
             "photo",
             "Вызов камеры",
             painterResource(R.drawable.baseline_photo_camera_24)
-        ) {CPhoto(onTakePhotoClick)}
+        ) {CPhoto()}
     )
     val currentPage = pages
         .firstOrNull { it.path == currentRoute }
@@ -104,15 +103,13 @@ fun CScaffold(
 }
 
 @Composable
-fun CApp(
-    onTakePhotoClick : ((Bitmap)->Unit) -> Unit
-)
+fun CApp()
 {
     CAppTheme(
         dynamicColor = false
     )
     {
-        CScaffold(onTakePhotoClick)
+        CScaffold()
     }
 }
 @Preview(
@@ -139,5 +136,5 @@ fun CApp(
 @Composable
 fun CPreview()
 {
-    CApp {}
+    CApp()
 }
