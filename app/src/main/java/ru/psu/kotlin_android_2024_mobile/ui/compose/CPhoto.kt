@@ -50,8 +50,8 @@ fun CPhoto()
     val defaultBitmap = ImageBitmap.imageResource(R.mipmap.logo)
 
     //https://developer.android.com/develop/ui/compose/libraries
-    var bitmap by remember { mutableStateOf<ImageBitmap?>(null) }
-//    val viewModel : CViewModelPhoto = viewModel()
+//    var bitmap by remember { mutableStateOf<ImageBitmap?>(null) }
+    val viewModel : CViewModelPhoto = viewModel()
     val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
@@ -71,8 +71,8 @@ fun CPhoto()
 
             }
             newBitmap?.let {
-//                viewModel.setBitmap(newBitmap)
-                bitmap = it.asImageBitmap()
+                viewModel.setBitmap(newBitmap)
+//                bitmap = it.asImageBitmap()
             }
         }
     }
@@ -82,8 +82,8 @@ fun CPhoto()
             .fillMaxSize()
     ) {
         Image(
-            bitmap = bitmap?:defaultBitmap,
-//            bitmap = viewModel.bitmap?:defaultBitmap,
+//            bitmap = bitmap?:defaultBitmap,
+            bitmap = viewModel.bitmap?:defaultBitmap,
             contentDescription = stringResource(id = R.string.app_name),
             contentScale = ContentScale.Crop,
             modifier = Modifier
