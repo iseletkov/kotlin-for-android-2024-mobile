@@ -22,6 +22,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import ru.psu.kotlin_android_2024_mobile.R
+import ru.psu.kotlin_android_2024_mobile.ui.compose.chat.CChat
 import ru.psu.kotlin_android_2024_mobile.ui.theme.CAppTheme
 
 
@@ -55,7 +56,12 @@ fun CScaffold(
             "photo",
             "Вызов камеры",
             painterResource(R.drawable.baseline_photo_camera_24)
-        ) {CPhoto()}
+        ) {CPhoto()},
+        CPageInfo(
+            "chat",
+            "Чат",
+            painterResource(R.drawable.baseline_chat_24)
+        ) { CChat() }
     )
     val currentPage = pages
         .firstOrNull { it.path == currentRoute }
@@ -87,7 +93,7 @@ fun CScaffold(
         NavHost(
             navController = navController,
             // set the start destination as home
-            startDestination = pages[3].path,
+            startDestination = pages[4].path,
 
             // Set the padding provided by scaffold
             modifier = Modifier.padding(paddingValues = padding),
