@@ -22,10 +22,9 @@ class CServiceNATS(
 
             val d = nc?.createDispatcher { msg: Message? -> }
 
-            val s = d?.subscribe("mytest") { msg ->
+            d?.subscribe("mytest") { msg ->
                 val newMessage = String(msg.data, StandardCharsets.UTF_8)
                 onMessageReceived(newMessage)
-//                println("Message received (up to 100 times): $response")
             }
         }
         catch (exp: Exception)
@@ -34,9 +33,8 @@ class CServiceNATS(
             onConnectionEventListener(status)
         }
     }
-    fun pub(topic: String, msg: String){
+    fun publish(topic: String, msg: String){
         nc?.publish(topic, msg.toByteArray(StandardCharsets.UTF_8))
-//        Log.d(TAG, "Published msg ${msg} on topic ${topic}")
     }
 
 }

@@ -16,9 +16,6 @@ class CViewModelChat: ViewModel(){
             println(newStatus)
         },
         ::addMessage
-//        { newMessage ->
-//            addMessage(newMessage)
-//        }
     )
     init {
         viewModelScope.launch(Dispatchers.IO) {
@@ -51,7 +48,7 @@ class CViewModelChat: ViewModel(){
     fun sendMessage()
     {
         viewModelScope.launch(Dispatchers.IO) {
-            nats.pub("mytest", message)
+            nats.publish("mytest", message)
             message = ""
         }
     }

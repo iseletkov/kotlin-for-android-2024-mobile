@@ -35,8 +35,11 @@ fun CChat() {
         modifier = Modifier
             .fillMaxSize()
     ) {
-
-        LazyColumn {
+        LazyColumn (
+            modifier = Modifier
+                .weight(1f, fill = true)
+        )
+        {
             items(viewModel.messages) { message ->
                 Text(message)
             }
